@@ -26,21 +26,6 @@
 #include "parameters.h"
 /* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
 
@@ -57,14 +42,6 @@ const q7_t bias3[OUTPUT_SIZE] = BIAS3;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
@@ -83,10 +60,6 @@ int main(void)
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
   /* Configure the system clock */
   SystemClock_Config();
 
@@ -96,30 +69,22 @@ int main(void)
 	EventRecorderInitialize (EventRecordAll, 1);
   /* USER CODE END SysInit */
 
-  /* Initialize all configured peripherals */
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   
-    /* USER CODE END WHILE */
-		
-	  for(j=0;j<100;j++){
-		EventStartC(1);
-		
-		for(i=0;i<8;i++){
-			input_copy[i] = inputVector[i+j*8];
-		}
-		
-		idx_pred = PredictFFNN_q7(input_copy, weight1, weight2, weight3, bias1, bias2, bias3, outVector);
-		
-		if(idx_pred == idx_true[j])
-			acc = acc+1;
-		
-		EventStopC(1);
-	}/* USER CODE END 3 */
+  /* Run 100 inferences */
+  for(j=0;j<100;j++){
+	  
+	EventStartC(1);
+
+	for(i=0;i<8;i++)
+		input_copy[i] = inputVector[i+j*8];
+
+	idx_pred = PredictFFNN_q7(input_copy, weight1, weight2, weight3, bias1, bias2, bias3, outVector);
+
+	if(idx_pred == idx_true[j])
+		acc = acc+1;
+
+	EventStopC(1);
+    }
     return 0;
 }
 
