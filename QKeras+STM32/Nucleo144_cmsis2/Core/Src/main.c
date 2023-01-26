@@ -43,7 +43,10 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-const q7_t inputVector[INPUT_SIZE] = INPUT_V;
+
+//static const q7_t inputVector[800] = INPUT_V;
+q7_t input_copy[8];
+static const q7_t idx_true[100] = TRUE_LABELS;
 const q7_t weight1[LYR1_SIZE*INPUT_SIZE] = WEIGHT1;
 const q7_t weight2[LYR2_SIZE*LYR1_SIZE] = WEIGHT2;
 const q7_t weight3[OUTPUT_SIZE*LYR2_SIZE] = WEIGHT3;
@@ -71,6 +74,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	float outVector[OUTPUT_SIZE]; 
+	q7_t i, j, idx_pred;
+	volatile float acc = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -101,12 +106,21 @@ int main(void)
   
     /* USER CODE END WHILE */
 		
-	  while(1){
-			EventStartC(1);
-			PredictFFNN_q7(inputVector, weight1, weight2, weight3, bias1, bias2, bias3, outVector);
-			EventStopC(1);
-		/* USER CODE END 3 */
-    }
+	  for(j=0;j<100;j++){
+		EventStartC(1);
+		
+		for(i=0;i<8;i++){
+			input_copy[i] = inputVector[i+j*8];
+		}
+		
+		idx_pred = PredictFFNN_q7(input_copy, weight1, weight2, weight3, bias1, bias2, bias3, outVector);
+		
+		if(idx_pred == idx_true[j])
+			acc = acc+1;
+		
+		EventStopC(1);
+	}/* USER CODE END 3 */
+    return 0;
 }
 
 /**
