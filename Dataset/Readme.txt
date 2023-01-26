@@ -1,0 +1,1 @@
+This dataset was taken from https://www.kaggle.com/datasets/sojanprajapati/emg-signal-for-gesture-recognition
