@@ -29,7 +29,7 @@
 
 /* USER CODE BEGIN PV */
 
-//static const q7_t inputVector[800] = INPUT_V;
+static const q7_t inputVector[800] = INPUT_V;
 q7_t input_copy[8];
 static const q7_t idx_true[100] = TRUE_LABELS;
 const q7_t weight1[LYR1_SIZE*INPUT_SIZE] = WEIGHT1;
