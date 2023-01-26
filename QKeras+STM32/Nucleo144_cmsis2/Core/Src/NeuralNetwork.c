@@ -13,20 +13,15 @@ q7_t PredictFFNN(const q15_t* inputVector,const q15_t* weight1, const q15_t* wei
 	//Fully connected layer, the last parameter isn't used by the function 
 	arm_fully_connected_q15(inputVector,weight1,INPUT_SIZE,LYR1_SIZE,9,8,bias1,interVector,NULL);
 	arm_relu_q15(interVector,LYR1_SIZE);
-	//fully_connected_q15(inputVector,weight1,INPUT_SIZE,LYR1_SIZE,5,8,bias1,interVector,NULL);
-	//relu_q15(interVector,LYR1_SIZE);
 	
 	arm_fully_connected_q15(interVector,weight2,LYR1_SIZE,LYR2_SIZE,7,7,bias2,interVector2,NULL);
 	arm_relu_q15(interVector2,LYR2_SIZE);
-	//fully_connected_q15(interVector,weight2,LYR1_SIZE,LYR2_SIZE,3,7,bias2,interVector2,NULL);
-	//relu_q15(interVector2,LYR2_SIZE);
 	
 	arm_fully_connected_q15(interVector2,weight3,LYR2_SIZE,OUTPUT_SIZE,7,7,bias3,out,NULL);
-	//fully_connected_q15(interVector2,weight3,LYR2_SIZE,OUTPUT_SIZE,2,5,bias3,out,NULL);
 	arm_softmax_q15(out,OUTPUT_SIZE,out);
 	idx =  max_index_q15(out, OUTPUT_SIZE);
 	/*
-	// Surprisingly arm_softmax_q15 associate the value 32768 with 100% probability extimation, so the final
+	// Surprisingly arm_softmax_q15 associates the value 32768 with 100% probability extimation, so the final
 	// output must be divided by 32768
 	for (i=0;i<OUTPUT_SIZE;i++){
 		outVector[i] = out[i]; //outVector[i] = out[i]/offset doesn't work, the q15_t result from / (=0) is cast to float (=0.00000)
@@ -63,7 +58,7 @@ q7_t PredictFFNN_q7(const q7_t* inputVector,const q7_t* weight1,const q7_t* weig
 	idx = max_index(out, OUTPUT_SIZE);
 	
 	/*
-	// Surprisingly arm_softmax_q15 associate the value 32768 with 100% probability extimation, so the final
+	// Surprisingly arm_softmax_q15 associates the value 32768 with 100% probability extimation, so the final
 	// output must be divided by 256
 	for (i=0;i<OUTPUT_SIZE;i++){
 		outVector[i] = out[i]; //outVector[i] = out[i]/offset doesn't work, the q15_t result from / (=0) is cast to float (=0.00000)
