@@ -1,0 +1,29 @@
+./objects/supportfunctionsf16.o: \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\SupportFunctionsF16.c \
+  RTE\_Target_1\Pre_Include_Global.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_copy_f16.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\dsp\support_functions_f16.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\arm_math_types_f16.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\arm_math_types.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\limits.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_mve.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\arm_math_memory.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\dsp\none.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\dsp\utils.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_fill_f16.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_f16_to_q15.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_f16_to_float.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_q15_to_f16.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_float_to_f16.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_weighted_sum_f16.c \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\arm_helium_utils.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\arm_common_tables.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\dsp\fast_math_functions.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Include\dsp\basic_math_functions.h \
+  C:\Users\chiar\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.14.1\Source\SupportFunctions\arm_barycenter_f16.c
