@@ -1,4 +1,4 @@
-# Thesis_project
+# NNs quantization and deployment
  This project quantizes a NN using TFLite and QKeras, and deploys the NN on two MCUs. Tutorial.pdf is a document with a tutorial that covers the setup of uVision MDK for latency and energy measurements.   
  In the folder *QKeras+STM32* there are two folders:  
  1. *qkeras_quant*, with the python code for the QKeras training, quantization and parameters manipulation  
